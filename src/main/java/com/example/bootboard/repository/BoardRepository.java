@@ -1,6 +1,7 @@
 package com.example.bootboard.repository;
 
 import com.example.bootboard.entity.Board;
+import com.example.bootboard.repository.search.SearchBoardRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface BoardRepository extends JpaRepository<Board, Long> {
+public interface BoardRepository extends JpaRepository<Board, Long>, SearchBoardRepository {
 
     //[@Query 어노테이션] -> JPA에서 사용자 정의 JPQL (Java Persistence Query Language) 쿼리를 정의할 때 사용
     //[@Query 어노테이션] -> 데이터베이스에서 특정 데이터를 가져오기 위해 사용됩니다.
